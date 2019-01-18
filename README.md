@@ -27,7 +27,7 @@ To train the models, please download training datasets: RainTrainH [1], RainTrai
 
 *_We note that (i) The datasets in the website of [1] seem to be modified. But the models and results in recent papers are all based on the previous version, and thus we upload the original training and testing datasets to [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg). 
 (ii) For RainTrainH, we strictly exclude 546 rainy images that have the same background contents with testing images.
-Our DRN is trained on remaining 1,254 training samples._
+All our models are trained on remaining 1,254 training samples._
 
 
 ## Getting Started
