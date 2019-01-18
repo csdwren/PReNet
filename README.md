@@ -64,7 +64,7 @@ We also provide the MATLAB scripts to compute the average PSNR and SSIM values r
  
 
 ```Matlab
- cd ./statistics
+ cd ./statistic
  run statistic_Rain100H.m
  run statistic_Rain100L.m
  run statistic_Rain12.m
