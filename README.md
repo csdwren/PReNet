@@ -20,11 +20,14 @@ Considering its simplicity, efficiency and effectiveness, our models are expecte
 
 ## Datasets
 
-PRN and PReNet are evaluated on four datasets*: Rain100H [1], Rain100L [1], Rain12 [2] and Rain1400 [3]. Please download the testing datasets from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg), and place the unzipped folders in `./test/`.
+PRN and PReNet are evaluated on four datasets*: Rain100H [1], Rain100L [1], Rain12 [2] and Rain1400 [3]. Please download the testing datasets from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg), and place the unzipped folders into `./test/`.
 
 To train the models, please download training datasets: RainTrainH [1], RainTrainL [1] and Rain12600 [3] from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg), and place the unzipped folders into `./train/`. 
 
-*_We note that (i) The datasets in the website of [1] seem to be modified. But the models and results in recent papers are all based on the previous version, and thus we upload the original training and testing datasets to [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg). 
+*_We note that:
+ 
+(i) The datasets in the website of [1] seem to be modified. But the models and results in recent papers are all based on the previous version, and thus we upload the original training and testing datasets to [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg). 
+
 (ii) For RainTrainH, we strictly exclude 546 rainy images that have the same background contents with testing images.
 All our models are trained on remaining 1,254 training samples._
 
@@ -33,7 +36,7 @@ All our models are trained on remaining 1,254 training samples._
 
 ### 1) Testing
 
-We have placed our pre-trained models in `./logs/`. 
+We have placed our pre-trained models into `./logs/`. 
 
 Run shell scripts to test the models:
 ```bash
@@ -45,7 +48,7 @@ bash test_ablation.sh # test the models in Ablation Study
 bash test_real.sh     # test PReNet on real rainy images
 ```
 All the results in the paper are also available at [BaiduYun](https://pan.baidu.com/s/1Oym9G-8Bq-0FU2BfbARf8g).
-You can place the downloaded results into `./results/`, and compute all the [evaluation metrics](statistic/) in this paper.  
+You can place the downloaded results into `./results/`, and directly compute all the [evaluation metrics](statistic/) in this paper.  
 
 ### 2) Training
 
@@ -72,7 +75,7 @@ We also provide the MATLAB scripts to compute the average PSNR and SSIM values r
 ```
 ### Model Configuration
 
-The following tables provide the documentation for all the options available in the configuration file:
+The following tables provide the configurations of options. 
 
 #### Training Mode Configurations
 
