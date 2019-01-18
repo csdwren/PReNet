@@ -1,1 +1,95 @@
-# PReNet
+## [Progressive Image Deraining Networks: A Better and Simpler Baseline]()
+
+### Introduction
+This paper provides a better and simpler baseline deraining network by discussing network architecture, input and output, and loss functions.
+Specifically, by repeatedly unfolding a shallow ResNet, progressive ResNet (PRN) is proposed to take advantage of recursive computation.
+A recurrent layer is further introduced to exploit the dependencies of deep features across stages, forming our progressive recurrent network (PReNet).
+Furthermore, intra-stage recursive computation of ResNet can be adopted in PRN and PReNet to notably reduce network parameters with graceful degradation in deraining performance.
+For network input and output, we take both stage-wise result and original rainy image as input to each ResNet and finally output the prediction of residual image.
+As for loss functions, single MSE or negative SSIM losses are sufficient to train PRN and PReNet.
+Experiments show that PRN and PReNet perform favorably on both synthetic and real rainy images.
+Considering its simplicity, efficiency and effectiveness, our models are expected to serve as a suitable baseline in future deraining research. 
+
+
+## Prerequisites
+- Python 3.6
+- PyTorch >=0.4.0
+- Requirements: opencv-python, tensorboardX
+- NVIDIA GPU + CUDA cuDNN
+- MATLAB for computing evaluation metrics
+
+
+## Datasets
+
+PRN and PReNet are evaluated on four datasets*: Rain100H [1], Rain100L [1], Rain12 [2] and Rain1400 [3]. Please download the testing dataset from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg), and place the folders in `./test/`.
+
+To train the models, please download training datasets: RainTrainH [1], RainTrainL [1] and Rain12600 [3] from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg), and place them into `./train/`. 
+
+*_We note that (i) The datasets in the website of [1] seem to be modified. But the models and results in recent papers are all based on the previous version, and thus we upload the original training and testing datasets to [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg). 
+(ii) For RainTrainH, we strictly exclude 546 rainy images that have the same background contents with testing images.
+Our DRN is trained on remaining 1,254 training samples._
+
+
+## Getting Started
+We have placed our pre-trained models in `./logs/`. You can test these pre-trained models directly.
+
+### 1) Testing
+
+Run shell script to test on four datasets :
+```bash
+bash test.sh 
+```
+
+### 2) Training
+
+Run shell script to train the models:
+```bash
+bash train.sh
+```
+
+### 3) Evaluation metrics
+
+We also provide the MATLAB scripts to compute the average PSNR and SSIM values reported in the paper.
+ 
+
+```Matlab
+ cd ./statistics
+ run statistic_Rain100H.m
+ run statistic_Rain100L.m
+ run statistic_Rain12.m
+ run statistic_Rain1400.m
+```
+### Model Configuration
+
+The following tables provide the documentation for all the options available in the configuration file:
+
+#### Training Mode Configurations
+
+Option                 |Default        | Description
+-----------------------|---------------|------------
+batchSize              | 16            | Training batch size
+intra_iter             | 7             | Number of intra iteration
+inter_iter             | 7             | Number of inter iteration
+epochs                 | 100           | Number of training epochs
+milestone              | [30,50,80]   | When to decay learning rate; should be less than epochs 
+lr                     | 1e-3          | Initial learning rate
+save_freq              | 1             | save intermediate model
+use_GPU                | True          | use GPU or not
+gpu_id                 | 0             | GPU id
+
+#### Testing Mode Configurations
+
+Option                 |Default           | Description
+-----------------------|------------------|------------
+use_GPU                | True             | use GPU or not
+gpu_id                 | 0                | GPU id
+inter_iter             | 7                | Number of inter iteration
+intra_iter             | 7                | Number of intra iteration
+
+## References
+[1] Yang W, Tan RT, Feng J, Liu J, Guo Z, Yan S. Deep joint rain detection and removal from a single image. In IEEE CVPR 2017.
+
+[2] Li Y, Tan RT, Guo X, Lu J, Brown MS. Rain streak removal using layer priors. In IEEE CVPR 2016.
+
+[3] Fu X, Huang J, Zeng D, Huang Y, Ding X, Paisley J. Removing rain from single images via a deep detail network. In IEEE CVPR 207.
+
