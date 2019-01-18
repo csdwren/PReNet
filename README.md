@@ -35,7 +35,7 @@ We have placed our pre-trained models in `./logs/`. You can test these pre-train
 
 ### 1) Testing
 
-Run shell script to test on four datasets :
+Run shell scripts to test the models:
 ```bash
 bash test_PRN.sh      # test PRN on four datasets
 bash test_PReNet.sh   # test PReNet on four datasets
@@ -49,7 +49,7 @@ You can place the downloaded results into `./results/`, and compute all the [eva
 
 ### 2) Training
 
-Run shell script to train the models:
+Run shell scripts to train the models:
 ```bash
 bash train_PRN.sh      # train PRN on three datasets
 bash train_PReNet.sh   # train PReNet on three datasets
