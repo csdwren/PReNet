@@ -98,11 +98,12 @@ use_GPU                | True             | use GPU or not
 gpu_id                 | 0                | GPU id
 recurrent_iter         | 6                | Number of recursive stages
 data_path              | N/A              | path to testing images
+save_path              | N/A              | path to save results
 
 ## References
 [1] Yang W, Tan RT, Feng J, Liu J, Guo Z, Yan S. Deep joint rain detection and removal from a single image. In IEEE CVPR 2017.
 
 [2] Li Y, Tan RT, Guo X, Lu J, Brown MS. Rain streak removal using layer priors. In IEEE CVPR 2016.
 
-[3] Fu X, Huang J, Zeng D, Huang Y, Ding X, Paisley J. Removing rain from single images via a deep detail network. In IEEE CVPR 207.
+[3] Fu X, Huang J, Zeng D, Huang Y, Ding X, Paisley J. Removing rain from single images via a deep detail network. In IEEE CVPR 2017.
 
