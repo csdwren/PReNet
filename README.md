@@ -3,9 +3,9 @@ Paper, codes and results come soon.
 
 ### Introduction
 This paper provides a better and simpler baseline deraining network by discussing network architecture, input and output, and loss functions.
-Specifically, by repeatedly unfolding a shallow ResNet, progressive ResNet (PRN) is proposed to take advantage of recursive computation.
-A recurrent layer is further introduced to exploit the dependencies of deep features across stages, forming our progressive recurrent network (PReNet).
-Furthermore, intra-stage recursive computation of ResNet can be adopted in PRN and PReNet to notably reduce network parameters with graceful degradation in deraining performance.
+Specifically, by repeatedly unfolding a shallow ResNet, progressive ResNet (**PRN**) is proposed to take advantage of recursive computation.
+A recurrent layer is further introduced to exploit the dependencies of deep features across stages, forming our progressive recurrent network (**PReNet**).
+Furthermore, intra-stage recursive computation of ResNet can be adopted in PRN and PReNet to notably reduce network parameters with graceful degradation in deraining performance (**PRN_r** and **PReNet_r**).
 For network input and output, we take both stage-wise result and original rainy image as input to each ResNet and finally output the prediction of residual image.
 As for loss functions, single MSE or negative SSIM losses are sufficient to train PRN and PReNet.
 Experiments show that PRN and PReNet perform favorably on both synthetic and real rainy images.
