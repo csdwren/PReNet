@@ -44,6 +44,8 @@ bash test_PReNet_r.sh # test PReNet_r on four datasets
 bash test_ablation.sh # test the models in Ablation Study
 bash test_real.sh     # test PReNet on real rainy images
 ```
+All the results in the paper are also available at [BaiduYun](https://pan.baidu.com/s/1Oym9G-8Bq-0FU2BfbARf8g).
+You can place the downloaded results into `./results/`, and compute all the [evaluation metrics](statistic/) in this paper.  
 
 ### 2) Training
 
