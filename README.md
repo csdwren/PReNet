@@ -41,7 +41,7 @@ bash test_PRN.sh      # test PRN on four datasets
 bash test_PReNet.sh   # test PReNet on four datasets
 bash test_PRN_r.sh    # test PRN_r on four datasets
 bash test_PReNet_r.sh # test PReNet_r on four datasets 
-bash test_ablation.sh # test the models that are used in Ablation Study
+bash test_ablation.sh # test the models in Ablation Study
 bash test_real.sh     # test PReNet on real rainy images
 ```
 
@@ -53,7 +53,7 @@ bash train_PRN.sh      # train PRN on three datasets
 bash train_PReNet.sh   # train PReNet on three datasets
 bash train_PRN_r.sh    # train PRN_r on three datasets (may need several tries on Rain12600)
 bash train_PReNet_r.sh # train PReNet_r on three datasets
-bash train_ablation.sh # models that are used in Ablation Study
+bash train_ablation.sh # train the models in Ablation Study
 ```
 
 ### 3) Evaluation metrics
