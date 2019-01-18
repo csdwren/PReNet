@@ -1,4 +1,5 @@
 ## [Progressive Image Deraining Networks: A Better and Simpler Baseline]()
+Paper, codes and results come soon. 
 
 ### Introduction
 This paper provides a better and simpler baseline deraining network by discussing network architecture, input and output, and loss functions.
@@ -79,7 +80,7 @@ Dataset       | PRN         |PReNet      | PRN_r       | PReNet_r
 Rain100H      | 28.07/0.884 | 29.46/0.899 | 27.43/0.874 | 28.98/0.892
 Rain100L      | 36.99/0.977 | 37.48/0.979 | 36.11/0.973 | 37.10/0.977
 Rain12        | 36.62/0.952 | 36.66/0.961 | 36.16/0.961 | 36.69/0.962
-Rain1400      | soon come   | soon come   | soon come   | soon come
+Rain1400      | come soon   | come soon   | come soon   | come soon
            
 ### Model Configuration
 
