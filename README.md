@@ -20,9 +20,9 @@ Considering its simplicity, efficiency and effectiveness, our models are expecte
 
 ## Datasets
 
-PRN and PReNet are evaluated on four datasets*: Rain100H [1], Rain100L [1], Rain12 [2] and Rain1400 [3]. Please download the testing datasets from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg), and place the folders in `./test/`.
+PRN and PReNet are evaluated on four datasets*: Rain100H [1], Rain100L [1], Rain12 [2] and Rain1400 [3]. Please download the testing datasets from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg), and place the unzipped folders in `./test/`.
 
-To train the models, please download training datasets: RainTrainH [1], RainTrainL [1] and Rain12600 [3] from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg), and place them into `./train/`. 
+To train the models, please download training datasets: RainTrainH [1], RainTrainL [1] and Rain12600 [3] from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg), and place the unzipped folders into `./train/`. 
 
 *_We note that (i) The datasets in the website of [1] seem to be modified. But the models and results in recent papers are all based on the previous version, and thus we upload the original training and testing datasets to [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg). 
 (ii) For RainTrainH, we strictly exclude 546 rainy images that have the same background contents with testing images.
@@ -30,9 +30,10 @@ All our models are trained on remaining 1,254 training samples._
 
 
 ## Getting Started
-We have placed our pre-trained models in `./logs/`. You can test these pre-trained models directly.
 
 ### 1) Testing
+
+We have placed our pre-trained models in `./logs/`. 
 
 Run shell scripts to test the models:
 ```bash
