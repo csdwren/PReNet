@@ -37,14 +37,23 @@ We have placed our pre-trained models in `./logs/`. You can test these pre-train
 
 Run shell script to test on four datasets :
 ```bash
-bash test.sh 
+bash test_PRN.sh      # test PRN on four datasets
+bash test_PReNet.sh   # test PReNet on four datasets
+bash test_PRN_r.sh    # test PRN_r on four datasets
+bash test_PReNet_r.sh # test PReNet_r on four datasets 
+bash test_ablation.sh # test the models that are used in Ablation Study
+bash test_real.sh     # test PReNet on real rainy images
 ```
 
 ### 2) Training
 
 Run shell script to train the models:
 ```bash
-bash train.sh
+bash train_PRN.sh      # train PRN on three datasets
+bash train_PReNet.sh   # train PReNet on three datasets
+bash train_PRN_r.sh    # train PRN_r on three datasets (may need several tries on Rain12600)
+bash train_PReNet_r.sh # train PReNet_r on three datasets
+bash train_ablation.sh # models that are used in Ablation Study
 ```
 
 ### 3) Evaluation metrics
@@ -68,14 +77,15 @@ The following tables provide the documentation for all the options available in 
 Option                 |Default        | Description
 -----------------------|---------------|------------
 batchSize              | 16            | Training batch size
-intra_iter             | 7             | Number of intra iteration
-inter_iter             | 7             | Number of inter iteration
+recurrent_iter         | 6             | Number of recursive stages
 epochs                 | 100           | Number of training epochs
-milestone              | [30,50,80]   | When to decay learning rate; should be less than epochs 
+milestone              | [30,50,80]    | When to decay learning rate
 lr                     | 1e-3          | Initial learning rate
 save_freq              | 1             | save intermediate model
 use_GPU                | True          | use GPU or not
 gpu_id                 | 0             | GPU id
+data_path              | N/A           | path to training images
+save_path              | N/A           | path to save models and status           
 
 #### Testing Mode Configurations
 
@@ -83,8 +93,8 @@ Option                 |Default           | Description
 -----------------------|------------------|------------
 use_GPU                | True             | use GPU or not
 gpu_id                 | 0                | GPU id
-inter_iter             | 7                | Number of inter iteration
-intra_iter             | 7                | Number of intra iteration
+recurrent_iter         | 6                | Number of recursive stages
+data_path              | N/A              | path to testing images
 
 ## References
 [1] Yang W, Tan RT, Feng J, Liu J, Guo Z, Yan S. Deep joint rain detection and removal from a single image. In IEEE CVPR 2017.
