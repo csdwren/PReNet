@@ -56,7 +56,7 @@ bash test_Rain100H.sh   # test models on Rain100H
 bash test_Rain100L.sh   # test models on Rain100L
 bash test_Rain12.sh     # test models on Rain12
 bash test_Rain1400.sh   # test models on Rain1400 
-bash test_Ablation.sh   # test the models in Ablation Study
+bash test_Ablation.sh   # test models in Ablation Study
 bash test_real.sh       # test PReNet on real rainy images
 ```
 All the results in the paper are also available at [BaiduYun](https://pan.baidu.com/s/1Oym9G-8Bq-0FU2BfbARf8g).
@@ -70,7 +70,7 @@ bash train_PRN.sh      # train PRN on three datasets
 bash train_PReNet.sh   # train PReNet on three datasets
 bash train_PRN_r.sh    # train PRN_r on three datasets (may need several tries on Rain12600)
 bash train_PReNet_r.sh # train PReNet_r on three datasets
-bash train_Ablation.sh # train the models in Ablation Study
+bash train_Ablation.sh # train models in Ablation Study
 ```
 
 ### 3) Evaluation metrics
@@ -93,7 +93,7 @@ Dataset    | PRN       |PReNet     |PRN_r      |PReNet_r   |JORDER[1]  |RESCAN[4
 Rain100H   |28.07/0.884|29.46/0.899|27.43/0.874|28.98/0.892|26.54/0.835|28.86/0.865
 Rain100L   |36.99/0.977|37.48/0.979|36.11/0.973|37.10/0.977|36.61/0.974|---
 Rain12     |36.62/0.952|36.66/0.961|36.16/0.961|36.69/0.962|33.92/0.953|---
-Rain1400   |31.45/0.946|31.91/0.951|30.88/0.941|come soon  | ---       |---
+Rain1400   |come soon  |come soon|come soon|come soon  | ---       |---
 
 *_We note that:_
 
