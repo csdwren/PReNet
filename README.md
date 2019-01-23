@@ -1,5 +1,5 @@
 ## [Progressive Image Deraining Networks: A Better and Simpler Baseline]()
-The codes and results have been partially available. Paper comes soon. 
+
 
 ### Introduction
 This paper provides a better and simpler baseline deraining network by discussing network architecture, input and output, and loss functions.
@@ -25,12 +25,12 @@ PRN and PReNet are evaluated on four datasets*:
 Rain100H [1], Rain100L [1], Rain12 [2] and Rain1400 [3]. 
 Please download the testing datasets from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg)
 or [OneDrive](https://1drv.ms/f/s!AqLfQqtZ6GwGgep-hgjLxkov2SSZ3g), 
-and place the unzipped folders into `./test/`.
+and place the unzipped folders into `./datasets/test/`.
 
 To train the models, please download training datasets: 
 RainTrainH [1], RainTrainL [1] and Rain12600 [3] from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg)
 or [OneDrive](https://1drv.ms/f/s!AqLfQqtZ6GwGgep-hgjLxkov2SSZ3g), 
-and place the unzipped folders into `./train/`. 
+and place the unzipped folders into `./datasets/train/`. 
 
 *_We note that:_
 
@@ -62,15 +62,15 @@ bash test_real.sh       # test PReNet on real rainy images
 All the results in the paper are also available at [BaiduYun](https://pan.baidu.com/s/1Oym9G-8Bq-0FU2BfbARf8g).
 You can place the downloaded results into `./results/`, and directly compute all the [evaluation metrics](statistic/) in this paper.  
 
-### 2) Training
+### 2) Training (come soon)
 
 Run shell scripts to train the models:
 ```bash
-bash train_PRN.sh      # train PRN on three datasets
-bash train_PReNet.sh   # train PReNet on three datasets
-bash train_PRN_r.sh    # train PRN_r on three datasets (may need several tries on Rain12600)
-bash train_PReNet_r.sh # train PReNet_r on three datasets
-bash train_Ablation.sh # train models in Ablation Study
+bash train_PRN.sh      
+bash train_PReNet.sh   
+bash train_PRN_r.sh    
+bash train_PReNet_r.sh 
+bash train_Ablation.sh 
 ```
 
 ### 3) Evaluation metrics
@@ -115,7 +115,7 @@ The following tables provide the configurations of options.
 
 Option                 |Default        | Description
 -----------------------|---------------|------------
-batchSize              | 16            | Training batch size
+batchSize              | 18            | Training batch size
 recurrent_iter         | 6             | Number of recursive stages
 epochs                 | 100           | Number of training epochs
 milestone              | [30,50,80]    | When to decay learning rate
