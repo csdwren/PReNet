@@ -1,21 +1,19 @@
 clear all
+close all
 
-gt_path = '../datasets/test/test12/groundtruth/';
+gt_path='../datasets/test/Rain12/groundtruth/';
 
-all_lstm_ssim_path='../results/test12/results_all_lstm_ssim/';
-lstm_ssim_path='../results/test12/results_light_lstm_ssim/';
-resnet_ssim_path='../results/test12/results_new_light_resnet_ssim/';
-resnet_recursive_ssim_path='../results/test12/results_new_light_resnet_recursive_ssim/';
-lstm_recursive_ssim_path='../results/test12/results_new_light_lstm_recursive_ssim/';
-
+PReNet = '../results/Rain12/PReNet/';
+PReNet_r = '../results/Rain12/PReNet_r/';
+PRN = '../results/Rain12/PRN6/';
+PRN_r = '../results/Rain12/PRN_r/';
+ 
 struct_model = {
-    struct('model_name','all_lstm_ssim','path',all_lstm_ssim_path),...
-    struct('model_name','lstm_ssim','path',lstm_ssim_path),...
-    struct('model_name','resnet_ssim','path',resnet_ssim_path),...
-    struct('model_name','resnet_recursive_ssim','path',resnet_recursive_ssim_path),...
-    struct('model_name','lstm_recursive_ssim','path',lstm_recursive_ssim_path),...
+          struct('model_name','PReNet','path',PReNet),...
+          struct('model_name','PReNet_r','path',PReNet_r),...
+          struct('model_name','PRN','path',PRN),...
+          struct('model_name','PRN_r','path',PRN_r),...
     };
-
 
 nimgs=12;nrain=1;
 nmodel = length(struct_model);
@@ -33,7 +31,7 @@ for nnn = 1:nmodel
             x_true=im2double(imread(fullfile(gt_path,sprintf('%d.png',iii))));%x_true
             x_true = rgb2ycbcr(x_true);x_true=x_true(:,:,1);
             
-            
+
             %%
             x = (im2double(imread(fullfile(struct_model{nnn}.path,sprintf('%d.png',iii)))));
             x = rgb2ycbcr(x);x = x(:,:,1);
@@ -50,6 +48,7 @@ for nnn = 1:nmodel
     fprintf('%s: psnr=%6.4f, ssim=%6.4f\n',struct_model{nnn}.model_name,mean(psnrs(:,nnn)),mean(ssims(:,nnn)));
     
 end
+
 
 
 

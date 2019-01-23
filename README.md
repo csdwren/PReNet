@@ -1,5 +1,5 @@
 ## [Progressive Image Deraining Networks: A Better and Simpler Baseline]()
-Paper, codes and results come soon. 
+The codes and results have been partially available. Paper comes soon. 
 
 ### Introduction
 This paper provides a better and simpler baseline deraining network by discussing network architecture, input and output, and loss functions.
@@ -21,14 +21,27 @@ Considering its simplicity, efficiency and effectiveness, our models are expecte
 
 ## Datasets
 
-PRN and PReNet are evaluated on four datasets*: Rain100H [1], Rain100L [1], Rain12 [2] and Rain1400 [3]. Please download the testing datasets from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg), and place the unzipped folders into `./test/`.
+PRN and PReNet are evaluated on four datasets*: 
+Rain100H [1], Rain100L [1], Rain12 [2] and Rain1400 [3]. 
+Please download the testing datasets from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg)
+or [OneDrive](https://1drv.ms/f/s!AqLfQqtZ6GwGgep-hgjLxkov2SSZ3g), 
+and place the unzipped folders into `./test/`.
 
-To train the models, please download training datasets: RainTrainH [1], RainTrainL [1] and Rain12600 [3] from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg), and place the unzipped folders into `./train/`. 
+To train the models, please download training datasets: 
+RainTrainH [1], RainTrainL [1] and Rain12600 [3] from [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg)
+or [OneDrive](https://1drv.ms/f/s!AqLfQqtZ6GwGgep-hgjLxkov2SSZ3g), 
+and place the unzipped folders into `./train/`. 
 
-*_We note that:
-(i) The datasets in the website of [1] seem to be modified. But the models and results in recent papers are all based on the previous version, and thus we upload the original training and testing datasets to [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg). 
-(ii) For RainTrainH, we strictly exclude 546 rainy images that have the same background contents with testing images.
-All our models are trained on remaining 1,254 training samples._
+*_We note that:_
+
+_(i) The datasets in the website of [1] seem to be modified. 
+    But the models and results in recent papers are all based on the previous version, 
+    and thus we upload the original training and testing datasets 
+    to [BaiduYun](https://pan.baidu.com/s/1J0q6Mrno9aMCsaWZUtmbkg) 
+    and [OneDrive](https://1drv.ms/f/s!AqLfQqtZ6GwGgep-hgjLxkov2SSZ3g)._ 
+
+_(ii) For RainTrainH, we strictly exclude 546 rainy images that have the same background contents with testing images.
+    All our models are trained on remaining 1,254 training samples._
 
 
 ## Getting Started
@@ -39,12 +52,12 @@ We have placed our pre-trained models into `./logs/`.
 
 Run shell scripts to test the models:
 ```bash
-bash test_PRN.sh      # test PRN on four datasets
-bash test_PReNet.sh   # test PReNet on four datasets
-bash test_PRN_r.sh    # test PRN_r on four datasets
-bash test_PReNet_r.sh # test PReNet_r on four datasets 
-bash test_ablation.sh # test the models in Ablation Study
-bash test_real.sh     # test PReNet on real rainy images
+bash test_Rain100H.sh   # test models on Rain100H
+bash test_Rain100L.sh   # test models on Rain100L
+bash test_Rain12.sh     # test models on Rain12
+bash test_Rain1400.sh   # test models on Rain1400 
+bash test_Ablation.sh   # test the models in Ablation Study
+bash test_real.sh       # test PReNet on real rainy images
 ```
 All the results in the paper are also available at [BaiduYun](https://pan.baidu.com/s/1Oym9G-8Bq-0FU2BfbARf8g).
 You can place the downloaded results into `./results/`, and directly compute all the [evaluation metrics](statistic/) in this paper.  
@@ -57,7 +70,7 @@ bash train_PRN.sh      # train PRN on three datasets
 bash train_PReNet.sh   # train PReNet on three datasets
 bash train_PRN_r.sh    # train PRN_r on three datasets (may need several tries on Rain12600)
 bash train_PReNet_r.sh # train PReNet_r on three datasets
-bash train_ablation.sh # train the models in Ablation Study
+bash train_Ablation.sh # train the models in Ablation Study
 ```
 
 ### 3) Evaluation metrics
@@ -75,13 +88,25 @@ We also provide the MATLAB scripts to compute the average PSNR and SSIM values r
 ###
 Average PSNR/SSIM values on four datasets:
 
-Dataset       | PRN         |PReNet      | PRN_r       | PReNet_r
---------------|-------------|-------------|-------------|-------------
-Rain100H      | 28.07/0.884 | 29.46/0.899 | 27.43/0.874 | 28.98/0.892
-Rain100L      | 36.99/0.977 | 37.48/0.979 | 36.11/0.973 | 37.10/0.977
-Rain12        | 36.62/0.952 | 36.66/0.961 | 36.16/0.961 | 36.69/0.962
-Rain1400      | come soon   | come soon   | come soon   | come soon
-           
+Dataset    | PRN       |PReNet     |PRN_r      |PReNet_r   |JORDER[1]  |RESCAN[4]
+-----------|-----------|-----------|-----------|-----------|-----------|-----------
+Rain100H   |28.07/0.884|29.46/0.899|27.43/0.874|28.98/0.892|26.54/0.835|28.86/0.865
+Rain100L   |36.99/0.977|37.48/0.979|36.11/0.973|37.10/0.977|36.61/0.974|---
+Rain12     |36.62/0.952|36.66/0.961|36.16/0.961|36.69/0.962|33.92/0.953|---
+Rain1400   |31.45/0.946|31.91/0.951|30.88/0.941|come soon  | ---       |---
+
+*_We note that:_
+
+_(i) The metrics by JORDER[1] are computed directly based on the deraining images 
+provided by the authors._ 
+
+_(ii) RESCAN[4] is re-trained with their default settings: 
+(1) RESCAN for Rain100H is trained on the full 1800 rainy images, while our models are all trained on the strict 1254 rainy images.
+(2) The re-trained model of RESCAN is available at [here](https://pan.baidu.com/s/1Oym9G-8Bq-0FU2BfbARf8g)._
+ 
+_(iii) The deraining results by JORDER and RESCAN can be downloaded 
+from [here](https://pan.baidu.com/s/1Oym9G-8Bq-0FU2BfbARf8g), 
+and their metrics in the above table can be computed by the [Matlab scripts](statistic/statistic_rain100H.m)._ 
 ### Model Configuration
 
 The following tables provide the configurations of options. 
@@ -118,3 +143,4 @@ save_path              | N/A              | path to save results
 
 [3] Fu X, Huang J, Zeng D, Huang Y, Ding X, Paisley J. Removing rain from single images via a deep detail network. In IEEE CVPR 2017.
 
+[4] Li X, Wu J, Lin Z, Liu H, Zha H. Recurrent squeeze-and-excitation context aggregation net for single image deraining.In ECCV 2018.
