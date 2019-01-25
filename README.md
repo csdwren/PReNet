@@ -79,7 +79,7 @@ Average PSNR/SSIM values on four datasets:
 
 Dataset    | PRN       |PReNet     |PRN_r      |PReNet_r   |JORDER[1]  |RESCAN[4]
 -----------|-----------|-----------|-----------|-----------|-----------|-----------
-Rain100H   |28.07/0.884|29.46/0.899|27.43/0.874|28.98/0.892|26.54/0.835|28.86/0.865
+Rain100H   |28.07/0.884|29.46/0.899|27.43/0.874|28.98/0.892|26.54/0.835|28.88/0.866
 Rain100L   |36.99/0.977|37.48/0.979|36.11/0.973|37.10/0.977|36.61/0.974|---
 Rain12     |36.62/0.952|36.66/0.961|36.16/0.961|36.69/0.962|33.92/0.953|---
 Rain1400   |come soon  |come soon|come soon|come soon  | ---       |---
@@ -97,7 +97,7 @@ _(iii) The deraining results by JORDER and RESCAN can be downloaded
 from [here](https://pan.baidu.com/s/1Oym9G-8Bq-0FU2BfbARf8g), 
 and their metrics in the above table can be computed by the [Matlab scripts](statistic/statistic_rain100H.m)._ 
 
-### 3) Training 
+### 3) Training
 
 Run shell scripts to train the models:
 ```bash
@@ -106,7 +106,7 @@ bash train_PRN.sh
 bash train_PReNet_r.sh    
 bash train_PRN_r.sh  
 ```
-You can use `tensorboard --logdir ./logs/your_model` to check the training procedures. 
+You can use `tensorboard --logdir ./logs/your_model_path` to check the training procedures. 
 
 ### Model Configuration
 
