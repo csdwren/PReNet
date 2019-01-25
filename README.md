@@ -62,18 +62,7 @@ bash test_real.sh       # test PReNet on real rainy images
 All the results in the paper are also available at [BaiduYun](https://pan.baidu.com/s/1Oym9G-8Bq-0FU2BfbARf8g).
 You can place the downloaded results into `./results/`, and directly compute all the [evaluation metrics](statistic/) in this paper.  
 
-### 2) Training (come soon)
-
-Run shell scripts to train the models:
-```bash
-bash train_PRN.sh      
-bash train_PReNet.sh   
-bash train_PRN_r.sh    
-bash train_PReNet_r.sh 
-bash train_Ablation.sh 
-```
-
-### 3) Evaluation metrics
+### 2) Evaluation metrics
 
 We also provide the MATLAB scripts to compute the average PSNR and SSIM values reported in the paper.
  
@@ -107,6 +96,18 @@ _(ii) RESCAN[4] is re-trained with their default settings:
 _(iii) The deraining results by JORDER and RESCAN can be downloaded 
 from [here](https://pan.baidu.com/s/1Oym9G-8Bq-0FU2BfbARf8g), 
 and their metrics in the above table can be computed by the [Matlab scripts](statistic/statistic_rain100H.m)._ 
+
+### 3) Training
+
+Run shell scripts to train the models:
+```bash
+bash train_PReNet.sh      
+bash train_PRN.sh   
+bash train_PReNet_r.sh    
+bash train_PRN_r.sh  
+```
+You can use `tensorboard --logdir ./logs/your_model` to check the training procedures. 
+
 ### Model Configuration
 
 The following tables provide the configurations of options. 
@@ -133,6 +134,7 @@ Option                 |Default           | Description
 use_GPU                | True             | use GPU or not
 gpu_id                 | 0                | GPU id
 recurrent_iter         | 6                | Number of recursive stages
+logdir                 | N/A              | path to trained model
 data_path              | N/A              | path to testing images
 save_path              | N/A              | path to save results
 
