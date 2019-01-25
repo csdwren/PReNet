@@ -1,4 +1,4 @@
-#! bash
+#! bash 
 
 # PReNet
 python test_PReNet.py --logdir logs/Rain100L/PReNet6 --save_path results/Rain100L/PReNet --data_path datasets/test/Rain100L/rainy

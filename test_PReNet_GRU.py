@@ -7,7 +7,7 @@ import torch
 from torch.autograd import Variable
 from utils import *
 from networks import *
-import time
+import time 
 
 parser = argparse.ArgumentParser(description="PReNet_Test")
 parser.add_argument("--logdir", type=str, default="logs/PReNet6/", help='path to model and log files')

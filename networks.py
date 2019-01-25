@@ -11,7 +11,7 @@ import cv2
 import random
 import time
 import os
-
+ 
 
 class PReNet(nn.Module):
     def __init__(self, recurrent_iter=6, use_GPU=True):

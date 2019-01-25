@@ -8,7 +8,7 @@ import cv2
 import glob
 import torch.utils.data as udata
 from utils import *
-
+ 
 
 def Im2Patch(img, win, stride=1):
     k = 0
