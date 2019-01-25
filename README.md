@@ -97,7 +97,7 @@ _(iii) The deraining results by JORDER and RESCAN can be downloaded
 from [here](https://pan.baidu.com/s/1Oym9G-8Bq-0FU2BfbARf8g), 
 and their metrics in the above table can be computed by the [Matlab scripts](statistic/statistic_rain100H.m)._ 
 
-### 3) Training
+### 3) Training 
 
 Run shell scripts to train the models:
 ```bash
