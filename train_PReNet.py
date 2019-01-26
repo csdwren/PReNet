@@ -23,7 +23,7 @@ parser.add_argument("--milestone", type=int, default=[30,50,80], help="When to d
 parser.add_argument("--lr", type=float, default=1e-3, help="initial learning rate")
 parser.add_argument("--save_path", type=str, default="logs/PReNet_test", help='path to save models and log files')
 parser.add_argument("--save_freq",type=int,default=1,help='save intermediate model')
-parser.add_argument("--data_path",type=str, default="datasets/train/RainTrainL",help='path to training data')
+parser.add_argument("--data_path",type=str, default="datasets/train/Rain12600",help='path to training data')
 parser.add_argument("--use_gpu", type=bool, default=True, help='use GPU or not')
 parser.add_argument("--gpu_id", type=str, default="0", help='GPU id: support multiple GPUs, e.g., "0,1", but our models are all trained on one GPU')
 parser.add_argument("--recurrent_iter", type=int, default=6, help='number of recursive stages')
@@ -125,11 +125,12 @@ def main():
 
 if __name__ == "__main__":
     if opt.preprocess:
-        if opt.data_path.find('RainTrainH'):
+        if opt.data_path.find('RainTrainH') != -1:
+            print(opt.data_path.find('RainTrainH'))
             prepare_data_RainTrainH(data_path=opt.data_path, patch_size=100, stride=80)
-        elif opt.data_path.find('RainTrainL'):
+        elif opt.data_path.find('RainTrainL') != -1:
             prepare_data_RainTrainL(data_path=opt.data_path, patch_size=100, stride=80)
-        elif opt.data_path.find('Rain12600'):
+        elif opt.data_path.find('Rain12600') != -1:
             prepare_data_Rain12600(data_path=opt.data_path, patch_size=100, stride=100)
         else:
             print('unkown datasets: please define prepare data function in DerainDataset.py')

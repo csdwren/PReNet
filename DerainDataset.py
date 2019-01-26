@@ -8,7 +8,7 @@ import cv2
 import glob
 import torch.utils.data as udata
 from utils import *
- 
+
 
 def Im2Patch(img, win, stride=1):
     k = 0
@@ -30,11 +30,11 @@ def Im2Patch(img, win, stride=1):
 def prepare_data_Rain12600(data_path, patch_size, stride):
     # train
     print('process training data')
-    input_path = os.path.join(data_path, 'train', 'rainy_image')
-    target_path = os.path.join(data_path, 'train', 'ground_truth')
+    input_path = os.path.join(data_path, 'rainy_image')
+    target_path = os.path.join(data_path, 'ground_truth')
 
-    save_target_path = os.path.join(target_path, 'train_target.h5')
-    save_input_path = os.path.join(input_path, 'train_input.h5')
+    save_target_path = os.path.join(data_path, 'train_target.h5')
+    save_input_path = os.path.join(data_path, 'train_input.h5')
 
     target_h5f = h5py.File(save_target_path, 'w')
     input_h5f = h5py.File(save_input_path, 'w')
@@ -78,7 +78,6 @@ def prepare_data_RainTrainH(data_path, patch_size, stride):
     print('process training data')
     input_path = os.path.join(data_path)
     target_path = os.path.join(data_path)
-    rain_path = os.path.join(data_path)
 
     save_target_path = os.path.join(data_path, 'train_target.h5')
     save_input_path = os.path.join(data_path, 'train_input.h5')

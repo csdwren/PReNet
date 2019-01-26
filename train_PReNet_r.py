@@ -125,11 +125,11 @@ def main():
 
 if __name__ == "__main__":
     if opt.preprocess:
-        if opt.data_path.find('RainTrainH'):
+        if opt.data_path.find('RainTrainH') != -1:
             prepare_data_RainTrainH(data_path=opt.data_path, patch_size=100, stride=80)
-        elif opt.data_path.find('RainTrainL'):
+        elif opt.data_path.find('RainTrainL') != -1:
             prepare_data_RainTrainL(data_path=opt.data_path, patch_size=100, stride=80)
-        elif opt.data_path.find('Rain12600'):
+        elif opt.data_path.find('Rain12600') != -1:
             prepare_data_Rain12600(data_path=opt.data_path, patch_size=100, stride=100)
         else:
             print('unkown datasets: please define prepare data function in DerainDataset.py')
