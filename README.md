@@ -73,6 +73,7 @@ We also provide the MATLAB scripts to compute the average PSNR and SSIM values r
  run statistic_Rain100L.m
  run statistic_Rain12.m
  run statistic_Rain1400.m
+ run statistic_Ablation.m  # compute the metrics in Ablation Study
 ```
 ###
 Average PSNR/SSIM values on four datasets:
