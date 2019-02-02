@@ -25,7 +25,7 @@ parser.add_argument("--save_path", type=str, default="logs/PReNet", help='path t
 parser.add_argument("--save_freq",type=int,default=1,help='save intermediate model')
 parser.add_argument("--data_path",type=str, default="datasets/train/RainTrainL",help='path to training data')
 parser.add_argument("--use_gpu", type=bool, default=True, help='use GPU or not')
-parser.add_argument("--gpu_id", type=str, default="0", help='GPU id: support multiple GPUs, e.g., "0,1", but our models are all trained on one GPU')
+parser.add_argument("--gpu_id", type=str, default="0", help='GPU id')
 parser.add_argument("--recurrent_iter", type=int, default=6, help='number of recursive stages')
 opt = parser.parse_args()
 
@@ -50,7 +50,7 @@ def main():
 
     # Move to GPU
     if opt.use_gpu:
-        model = nn.DataParallel(model).cuda()
+        model = model.cuda()
         criterion.cuda()
 
     # Optimizer
