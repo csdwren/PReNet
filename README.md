@@ -1,5 +1,5 @@
-## [Progressive Image Deraining Networks: A Better and Simpler Baseline](https://arxiv.org/abs/1901.09221)
-
+## Progressive Image Deraining Networks: A Better and Simpler Baseline (CVPR 2019)
+[[arxiv](https://arxiv.org/abs/1901.09221)] [[pdf](https://csdwren.github.io/papers/PReNet_cvpr_camera.pdf)] [[supp](https://csdwren.github.io/papers/PReNet_supp.pdf)]
 
 ### Introduction
 This paper provides a better and simpler baseline deraining network by discussing network architecture, input and output, and loss functions.
@@ -147,3 +147,15 @@ save_path              | N/A              | path to save results
 [3] Fu X, Huang J, Zeng D, Huang Y, Ding X, Paisley J. Removing rain from single images via a deep detail network. In IEEE CVPR 2017.
 
 [4] Li X, Wu J, Lin Z, Liu H, Zha H. Recurrent squeeze-and-excitation context aggregation net for single image deraining.In ECCV 2018.
+
+
+# Citation
+
+```
+ @inproceedings{ren2019progressive,
+   title={Progressive Image Deraining Networks: A Better and Simpler Baseline},
+   author={Ren, Dongwei and Zuo, Wangmeng and Hu, Qinghua and Zhu, Pengfei and Meng, Deyu},
+   booktitle={IEEE Conference on Computer Vision and Pattern Recognition},
+   year={2019},
+ }
+ ```
