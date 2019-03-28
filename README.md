@@ -1,4 +1,4 @@
-## Progressive Image Deraining Networks: A Better and Simpler Baseline (CVPR 2019)
+## Progressive Image Deraining Networks: A Better and Simpler Baseline 
 [[arxiv](https://arxiv.org/abs/1901.09221)] [[pdf](https://csdwren.github.io/papers/PReNet_cvpr_camera.pdf)] [[supp](https://csdwren.github.io/papers/PReNet_supp.pdf)]
 
 ### Introduction
