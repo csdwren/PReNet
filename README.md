@@ -1,4 +1,4 @@
-## Progressive Image Deraining Networks: A Better and Simpler Baseline 
+## [Progressive Image Deraining Networks: A Better and Simpler Baseline](https://www.researchgate.net/publication/335013294_Neural_Blind_Deconvolution_Using_Deep_Priors) 
 [[arxiv](https://arxiv.org/abs/1901.09221)] [[pdf](https://www.researchgate.net/publication/335013294_Neural_Blind_Deconvolution_Using_Deep_Priors)] [[supp](https://csdwren.github.io/papers/PReNet_supp.pdf)]
 
 ### Introduction
